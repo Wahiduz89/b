@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useNav } from './NavContext';
 import Link from 'next/link';
@@ -17,15 +16,11 @@ export default function MobileMenu() {
   return (
     <>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <div
           className="md:hidden fixed inset-0 z-50 bg-black/50"
           onClick={toggleNav}
         >
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
+          <div
             className="absolute right-0 top-0 h-full w-64 bg-gray-900"
             onClick={(e) => e.stopPropagation()}
           >
@@ -50,8 +45,8 @@ export default function MobileMenu() {
                 ))}
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
     </>
   );

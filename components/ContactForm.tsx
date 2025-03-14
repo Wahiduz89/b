@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 
 type FormData = {
@@ -18,9 +17,7 @@ export default function ContactForm() {
   };
 
   return (
-    <motion.form
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+    <form
       onSubmit={handleSubmit(onSubmit)}
       className="space-y-6"
     >
@@ -64,6 +61,6 @@ export default function ContactForm() {
       >
         Send Message
       </button>
-    </motion.form>
+    </form>
   );
 }

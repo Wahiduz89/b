@@ -7,7 +7,18 @@ export const classes: ClassType[] = [
     description: 'Build muscle mass with professional guidance',
     image: '/images/classes/strength.jpg'
   },
-  // Add more classes
+  {
+    id: 2,
+    title: 'Cardio Fitness',
+    description: 'Improve your endurance and heart health',
+    image: '/images/classes/cardio.jpg'
+  },
+  {
+    id: 3,
+    title: 'Yoga & Flexibility',
+    description: 'Enhance your flexibility and mental wellbeing',
+    image: '/images/classes/yoga.jpg'
+  }
 ];
 
 export const features: FeatureType[] = [
@@ -17,5 +28,22 @@ export const features: FeatureType[] = [
     description: 'Access our facilities anytime',
     icon: '⏰'
   },
-  // Add more features
+  {
+    id: 2,
+    title: 'Expert Trainers',
+    description: 'Get guidance from certified professionals',
+    icon: '👨‍🏫'
+  },
+  {
+    id: 3,
+    title: 'Modern Equipment',
+    description: 'Train with state-of-the-art fitness equipment',
+    icon: '💪'
+  },
+  {
+    id: 4,
+    title: 'Community Support',
+    description: 'Join a supportive fitness community',
+    icon: '👥'
+  }
 ];
