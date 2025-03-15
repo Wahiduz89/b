@@ -1,6 +1,8 @@
+// components/Contact/ContactForm.tsx
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
 
 type FormData = {
   name: string;
@@ -13,24 +15,28 @@ export default function ContactForm() {
 
   const onSubmit = (data: FormData) => {
     console.log(data);
-    // Add your form submission logic here
+    // Add form submission logic
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="space-y-6"
-    >
-      <div>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+      >
         <input
           {...register('name', { required: 'Name is required' })}
           placeholder="Your Name"
           className="w-full p-4 bg-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500"
         />
         {errors.name && <p className="text-red-500 mt-1">{errors.name.message}</p>}
-      </div>
-      
-      <div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.1 }}
+      >
         <input
           {...register('email', { 
             required: 'Email is required',
@@ -43,9 +49,13 @@ export default function ContactForm() {
           className="w-full p-4 bg-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500"
         />
         {errors.email && <p className="text-red-500 mt-1">{errors.email.message}</p>}
-      </div>
-      
-      <div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2 }}
+      >
         <textarea
           {...register('message', { required: 'Message is required' })}
           placeholder="Your Message"
@@ -53,14 +63,20 @@ export default function ContactForm() {
           className="w-full p-4 bg-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500"
         ></textarea>
         {errors.message && <p className="text-red-500 mt-1">{errors.message.message}</p>}
-      </div>
-      
-      <button
-        type="submit"
-        className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg transition-colors"
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
       >
-        Send Message
-      </button>
+        <button
+          type="submit"
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg transition-colors"
+        >
+          Send Message
+        </button>
+      </motion.div>
     </form>
   );
 }

@@ -1,4 +1,5 @@
-import { ClassType, FeatureType } from '@/types/types';
+// lib/data.ts
+import { ClassType, FeatureType, BlogPost, PricingPlan } from '@/types/types';
 
 export const classes: ClassType[] = [
   {
@@ -7,18 +8,7 @@ export const classes: ClassType[] = [
     description: 'Build muscle mass with professional guidance',
     image: '/images/classes/strength.jpg'
   },
-  {
-    id: 2,
-    title: 'Cardio Fitness',
-    description: 'Improve your endurance and heart health',
-    image: '/images/classes/cardio.jpg'
-  },
-  {
-    id: 3,
-    title: 'Yoga & Flexibility',
-    description: 'Enhance your flexibility and mental wellbeing',
-    image: '/images/classes/yoga.jpg'
-  }
+  // Add other classes...
 ];
 
 export const features: FeatureType[] = [
@@ -28,22 +18,31 @@ export const features: FeatureType[] = [
     description: 'Access our facilities anytime',
     icon: '⏰'
   },
+  // Add other features...
+];
+
+export const pricingPlans: PricingPlan[] = [
   {
-    id: 2,
-    title: 'Expert Trainers',
-    description: 'Get guidance from certified professionals',
-    icon: '👨‍🏫'
+    title: "Basic Membership",
+    price: "$49/mo",
+    features: [
+      "24/7 Gym Access",
+      "Standard Equipment",
+      "1 Free Training Session",
+      "Group Classes"
+    ]
   },
+  // Add other plans...
+];
+
+export const blogPosts: BlogPost[] = [
   {
-    id: 3,
-    title: 'Modern Equipment',
-    description: 'Train with state-of-the-art fitness equipment',
-    icon: '💪'
+    id: 1,
+    title: "5 Tips for Better Workout Recovery",
+    excerpt: "Learn how to optimize your recovery process...",
+    image: "/images/blog/recovery.jpg",
+    date: "March 15, 2024",
+    slug: "workout-recovery-tips"
   },
-  {
-    id: 4,
-    title: 'Community Support',
-    description: 'Join a supportive fitness community',
-    icon: '👥'
-  }
+  // Add other posts...
 ];
