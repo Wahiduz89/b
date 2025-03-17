@@ -4,19 +4,19 @@
 import { motion } from 'framer-motion';
 
 const testimonials = [
-  {
-    id: 1,
-    name: 'Sarah Johnson',
-    role: 'Professional Athlete',
-    text: 'The best facility I've ever trained at. The trainers are incredibly knowledgeable and the equipment is top-notch.',
-  },
-  {
-    id: 2,
-    name: 'Mike Chen',
-    role: 'Fitness Enthusiast',
-    text: 'Transformed my fitness journey completely. The community support here is unmatched!',
-  },
-];
+    {
+      id: 1,
+      name: 'Sarah Johnson',
+      role: 'Professional Athlete',
+      text: "The best facility I've ever trained at. The trainers are incredibly knowledgeable and the equipment is top-notch.",
+    },
+    {
+      id: 2,
+      name: 'Mike Chen',
+      role: 'Fitness Enthusiast',
+      text: 'Transformed my fitness journey completely. The community support here is unmatched!',
+    },
+  ];
 
 export default function TestimonialSection() {
   return (

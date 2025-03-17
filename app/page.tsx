@@ -1,7 +1,7 @@
 // app/page.tsx
 import HeroSection from '@/components/Hero/HeroSection';
-import Navigation from '@/components/Cards/Navigation';
-import MobileMenu from '@/components/Cards/MobileMenu';
+import Navigation from '@/components/Navigation/Navigation';
+import MobileMenu from '@/components/Navigation/MobileMenu';
 import { classes, features } from '@/lib/data';
 import ClassCard from '@/components/Cards/ClassCard';
 import WhyUsCard from '@/components/Cards/WhyUsCard';
@@ -21,7 +21,7 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-center mb-12">Our Classes</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {classes.map((cls) => (
+              {classes.slice(0, 3).map((cls) => (
                 <ClassCard key={cls.id} {...cls} />
               ))}
             </div>

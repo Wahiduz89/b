@@ -12,7 +12,6 @@ const NavContext = createContext<NavContextType>({} as NavContextType);
 
 export function NavProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (

@@ -1,30 +1,28 @@
+// components/Cards/ClassCard.tsx
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import Image from 'next/image';
+import { ClassType } from '@/types/types';
 
-type NavContextType = {
-  isOpen: boolean;
-  toggleNav: () => void;
-};
-
-const NavContext = createContext<NavContextType | undefined>(undefined);
-
-export function NavProvider({ children }: { children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNav = () => setIsOpen(!isOpen);
-
+export default function ClassCard({ title, description, image }: ClassType) {
   return (
-    <NavContext.Provider value={{ isOpen, toggleNav }}>
-      {children}
-    </NavContext.Provider>
+    <div className="bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+      <div className="relative h-56">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">{title}</h3>
+        <p className="text-gray-400">{description}</p>
+        <button className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg transition-colors">
+          Learn More
+        </button>
+      </div>
+    </div>
   );
-}
-
-export function useNav() {
-  const context = useContext(NavContext);
-  if (!context) {
-    throw new Error('useNav must be used within NavProvider');
-  }
-  return context;
 }

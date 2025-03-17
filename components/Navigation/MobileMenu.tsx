@@ -1,7 +1,7 @@
-// components/Navigation/MobileMenu.tsx
+// components/Cards/MobileMenu.tsx
 'use client';
 
-import { useNav } from './NavContext';
+import { useNav } from '@/components/Navigation/NavContext';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
